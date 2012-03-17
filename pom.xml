@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>nu.danielsundberg.variableweb</groupId>
+    <artifactId>VariableWebReactor</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>VariableWeb Reactor</name>
+    <packaging>pom</packaging>
+
+    <modules>
+	<module>variablewebframework</module>
+        <module>variablewebapplication</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>ISO_8859_1</project.build.sourceEncoding>
+        <java.version>1.6</java.version>
+        <jee.version>5</jee.version>
+        <ejb.version>3.1</ejb.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>nu.danielsundberg.variableweb</groupId>
+                <artifactId>VariableWebFramework</artifactId>
+                <version>${project.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>nu.danielsundberg.variableweb</groupId>
+                <artifactId>VariableWebApplication</artifactId>
+                <version>${project.version}</version>
+                <type>war</type>
+            </dependency>
+            
+            <!-- External dependenciess -->
+            
+            <!-- Test dependenciess -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.8.2</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+		    <groupId>org.mockito</groupId>
+		    <artifactId>mockito-all</artifactId>
+		    <version>1.9.0-rc1</version>
+		    <scope>test</scope>
+	    </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.0.2</version>
+		<configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
