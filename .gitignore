@@ -1,0 +1,14 @@
+target/
+.settings/
+
+# Java class files
+*.class
+
+#OSX files
+.DS_Store
+
+# IntelliJ Ideas project files
+.idea/
+*.ipr
+*.iws
+*.iml
